@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vellixia.github.io/sitemap.xml
+Sitemap: https://cunilab.github.io/sitemap.xml

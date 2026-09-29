@@ -3,279 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0a0a0f" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#fafafb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1A2030" />
+  <title>Cunilab: down the rabbit hole, on purpose</title>
+  <meta name="description" content="Cunilab is an independent lab for experiments that might become useful. Ask. Test. Build. Learn. Repeat." />
+  <link rel="canonical" href="https://cunilab.github.io/" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
 
-  <title>Vellixia — A realm of swift clarity</title>
-  <meta name="description" content="Vellixia is a realm of swift clarity. Open-source tools for AI agents — local-first, self-hosted, fast." />
-  <meta name="author" content="Andres Holivin" />
-  <link rel="canonical" href="https://vellixia.github.io/" />
-
-  <!-- Prevent theme flash -->
-  <script>
-    (function () {
-      try {
-        var saved = localStorage.getItem("vx-theme");
-        var sysDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        var theme = saved || (sysDark ? "dark" : "dark"); // default dark
-        document.documentElement.setAttribute("data-theme", theme);
-      } catch (e) {}
-    })();
-  </script>
-
-  <!-- Dynamic favicon (GitHub avatar; cache-busted) -->
-  <link rel="icon" type="image/png" href="https://github.com/Vellixia.png?v=1" />
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Vellixia" />
-  <meta property="og:title" content="Vellixia — A realm of swift clarity" />
-  <meta property="og:description" content="Open-source tools for AI agents — local-first, self-hosted, fast. Building at the speed of light." />
-  <meta property="og:image" content="https://vellixia.github.io/og.png" />
+  <meta property="og:site_name" content="Cunilab" />
+  <meta property="og:title" content="Cunilab: down the rabbit hole, on purpose" />
+  <meta property="og:description" content="An independent lab for experiments that might become useful." />
+  <meta property="og:image" content="https://cunilab.github.io/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Vellixia — A realm of swift clarity" />
-  <meta property="og:url" content="https://vellixia.github.io/" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter Card -->
+  <meta property="og:url" content="https://cunilab.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Vellixia — A realm of swift clarity" />
-  <meta name="twitter:description" content="Open-source tools for AI agents — local-first, self-hosted, fast." />
-  <meta name="twitter:image" content="https://vellixia.github.io/og.png" />
-  <meta name="twitter:image:alt" content="Vellixia — A realm of swift clarity" />
 
-  <!-- PWA -->
-  <link rel="manifest" href="./manifest.json" />
-  <link rel="apple-touch-icon" href="./icon-192.png" />
-
-  <!-- RSS + Sitemap discovery -->
-  <link rel="alternate" type="application/rss+xml" title="Vellixia" href="./feed.xml" />
-  <link rel="sitemap" type="application/xml" href="./sitemap.xml" />
-
-  <!-- JSON-LD: Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Vellixia",
-    "alternateName": "Vellixia — A realm of swift clarity",
-    "url": "https://vellixia.github.io/",
-    "logo": "https://github.com/Vellixia.png",
-    "description": "Open-source tools for AI agents — local-first, self-hosted, fast.",
+    "name": "Cunilab",
+    "url": "https://cunilab.github.io/",
+    "logo": "https://cunilab.github.io/apple-touch-icon.png",
+    "description": "An independent lab for experiments that might become useful.",
     "foundingDate": "2025",
     "foundingLocation": "Jakarta, Indonesia",
-    "email": "andresholivin01@gmail.com",
-    "sameAs": [
-      "https://github.com/Vellixia"
-    ],
-    "knowsAbout": ["AI agents", "Local-first software", "Self-hosted systems", "Rust", "Open source"],
-    "member": [
-      { "@type": "Person", "name": "Andres Holivin", "url": "https://github.com/Andres-Holivin" }
-    ],
-    "subOrganization": []
-  }
-  </script>
-
-  <!-- JSON-LD: WebSite with SearchAction -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Vellixia",
-    "url": "https://vellixia.github.io/",
-    "publisher": { "@type": "Organization", "name": "Vellixia" },
-    "inLanguage": "en-US"
+    "sameAs": ["https://github.com/cunilab"]
   }
   </script>
 
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="bg-grid"></div>
-  <div class="hero-spotlight"></div>
-
-  <header class="hero">
-    <nav class="nav">
-      <a href="./" class="brand" aria-label="Vellixia home">
-        <img src="https://github.com/Vellixia.png?v=1" alt="" class="brand-mark" id="brandAvatar" />
-        <span class="brand-name">Vellixia</span>
-      </a>
-      <div class="nav-links">
-        <a href="#mission">Mission</a>
-        <a href="#projects">Projects</a>
-        <a href="#etymology">Etymology</a>
-        <a href="https://github.com/Vellixia" rel="noopener" target="_blank">GitHub →</a>
-      </div>
-      <div class="nav-actions">
-        <button class="search-trigger" id="searchTrigger" type="button" aria-label="Search">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          Search <span class="search-kbd">⌘K</span>
-        </button>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
-          <span class="moon">🌙</span><span class="sun">☀️</span>
-        </button>
-      </div>
+  <header class="nav">
+    <a href="./" class="brand"><img src="./favicon.svg" alt="" width="28" height="28" /><span>Cunilab</span></a>
+    <nav>
+      <a href="#name">The name</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#method">Method</a>
+      <a href="https://github.com/cunilab" rel="noopener">GitHub</a>
     </nav>
-
-    <div class="hero-content" id="top">
-      <div class="badge">
-        <span class="badge-dot"></span>
-        Building at the speed of light
-      </div>
-      <h1 class="hero-title">
-        <span class="word">A</span>
-        <span class="word">realm</span>
-        <span class="word">of</span>
-        <span class="word grad">swift&nbsp;clarity.</span>
-      </h1>
-      <p class="hero-sub">
-        Vellixia creates lightning-fast, lightweight, and elegantly clear software.
-        Open-source tools for AI agents — local-first, self-hosted, fast.
-      </p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">Explore projects</a>
-        <a href="https://github.com/Vellixia" rel="noopener" target="_blank" class="btn btn-ghost">Star on GitHub</a>
-      </div>
-
-      <dl class="stats" aria-label="Organization statistics">
-        <div class="stat"><dt id="statRepos">—</dt><dd>Public repos</dd></div>
-        <div class="stat"><dt id="statStars">—</dt><dd>Total stars</dd></div>
-        <div class="stat"><dt id="statMembers">—</dt><dd>Members</dd></div>
-        <div class="stat"><dt>2025</dt><dd>Founded</dd></div>
-      </dl>
-    </div>
   </header>
 
   <main>
-    <section class="section" id="mission">
-      <div class="section-label reveal">Mission</div>
-      <h2 class="section-title reveal">Where velocity meets clarity</h2>
-      <p class="section-lead reveal">
-        We build software that feels <em>futuristic, energetic, and sleek</em>.
-        Our name — Vellixia — is a promise: every line of code is fast, every
-        interface is clear, every system is built to illuminate complexity rather
-        than add to it.
-      </p>
-
-      <div class="marquee reveal">
-        <div class="marquee-track">
-          <span>Local-first</span><span>Self-hosted</span><span>Rust</span><span>Open source</span><span>MCP</span><span>AI agents</span><span>Air-gappable</span><span>Vector + Graph + Causal</span><span>Multi-device sync</span><span>Zero lock-in</span>
-          <span>Local-first</span><span>Self-hosted</span><span>Rust</span><span>Open source</span><span>MCP</span><span>AI agents</span><span>Air-gappable</span><span>Vector + Graph + Causal</span><span>Multi-device sync</span><span>Zero lock-in</span>
-        </div>
-      </div>
-
-      <div class="pillars">
-        <article class="pillar reveal reveal-delay-1">
-          <div class="pillar-icon">⚡</div>
-          <h3>Velocity</h3>
-          <p>High-performance code and rapid development cycles. Built for momentum.</p>
-        </article>
-        <article class="pillar reveal reveal-delay-2">
-          <div class="pillar-icon">💡</div>
-          <h3>Clarity</h3>
-          <p>Transparent architecture and illuminating solutions. Clean by design.</p>
-        </article>
-        <article class="pillar reveal reveal-delay-3">
-          <div class="pillar-icon">🌐</div>
-          <h3>Ecosystem</h3>
-          <p>A collective of tools that compose into something larger than the sum of parts.</p>
-        </article>
+    <section class="hero">
+      <img src="./logo.svg" alt="Cunilab logo: a rabbit climbing out of its hole, holding the Cunilab sign" class="hero-logo" width="240" height="240" />
+      <p class="eyebrow">Jakarta, Indonesia · Since 2025</p>
+      <h1>An independent lab for experiments that might become&nbsp;useful.</h1>
+      <p class="loop">Ask <span>·</span> Test <span>·</span> Build <span>·</span> Learn <span>·</span> Repeat</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/cunilab" rel="noopener">See the lab on GitHub</a>
+        <a class="btn" href="mailto:andresholivin01@gmail.com">Get in touch</a>
       </div>
     </section>
 
-    <section class="section" id="projects">
-      <div class="section-label reveal">Projects</div>
-      <h2 class="section-title reveal">What we're building</h2>
-      <p class="section-lead reveal">Live from <a href="https://github.com/orgs/Vellixia/repositories" rel="noopener" target="_blank">github.com/Vellixia</a>. Private repos are hidden.</p>
+    <section id="name" class="section">
+      <p class="label">The name</p>
+      <h2>Cunilab = <em>cuni-</em> + <em>lab</em></h2>
+      <p class="lead">It comes from the Latin <em>cuniculus</em>, a word with two meanings.</p>
+      <div class="pair">
+        <article class="card">
+          <h3>A rabbit</h3>
+          <p>Small, fast, restless, and always curious.</p>
+        </article>
+        <article class="card">
+          <h3>An underground tunnel</h3>
+          <p>A passage dug to reach something hidden. The Etruscans and Romans dug <em>cuniculi</em> to move water under the land.</p>
+        </article>
+      </div>
+      <p class="lead">One word covers the animal and the tunnel it digs. So Cunilab literally means <strong>the Rabbit Hole Lab</strong>: the place where we follow a question deeper than we planned and come back with something real.</p>
+    </section>
 
-      <div class="projects-grid" id="projectsGrid">
-        <div class="project-loading">Loading live repository data…</div>
+    <section class="section quote">
+      <h2>What happens if we try this?</h2>
+      <p class="lead">That question is where every experiment here starts. We don't start with a product plan. We start with curiosity, turn it into an experiment, and build just enough to see what's real. Some experiments become tools. Some become knowledge. Some fail, and that's data too.</p>
+    </section>
+
+    <section id="philosophy" class="section">
+      <p class="label">Philosophy</p>
+      <h2>Four rules of the burrow</h2>
+      <div class="grid four">
+        <article class="card"><h3>Follow the rabbit</h3><p>Curiosity is the compass. If a question won't leave us alone, it's worth chasing.</p></article>
+        <article class="card"><h3>Dig until it's real</h3><p>An idea only counts once we can touch it: a prototype, a test, a result.</p></article>
+        <article class="card"><h3>Bring back the light</h3><p>A tunnel is only useful if it leads somewhere. Every experiment comes back with something.</p></article>
+        <article class="card"><h3>Dead ends are part of the map</h3><p>Some tunnels go nowhere. We write that down too, so the next explorer saves time.</p></article>
       </div>
     </section>
 
-    <section class="section" id="etymology">
-      <div class="section-label reveal">Etymology</div>
-      <h2 class="section-title reveal">The name Vellixia</h2>
-      <p class="section-lead reveal">
-        A modern, abstract name formed by blending three linguistic concepts.
-      </p>
+    <section id="method" class="section">
+      <p class="label">Method</p>
+      <h2>How we work</h2>
+      <ol class="steps">
+        <li><span>01</span><h3>Ask</h3><p>Find a question worth asking. Study what's already known.</p></li>
+        <li><span>02</span><h3>Test</h3><p>Turn assumptions into experiments. Look for evidence, not opinions.</p></li>
+        <li><span>03</span><h3>Build</h3><p>Prototype before polishing. Make it real enough to try.</p></li>
+        <li><span>04</span><h3>Learn</h3><p>Keep what works. Write down what didn't. Ask the next question.</p></li>
+      </ol>
+    </section>
 
-      <div class="etymology">
-        <div class="etym reveal reveal-delay-1">
-          <div class="etym-head"><span class="etym-prefix">Vel-</span><span class="etym-root">velocity</span></div>
-          <p>Speed, momentum, and rapid execution. The code is highly performant; the cycle is fast.</p>
-        </div>
-        <div class="etym reveal reveal-delay-2">
-          <div class="etym-head"><span class="etym-prefix">-lix</span><span class="etym-root">light · clarity</span></div>
-          <p>From Latin <em>lūx</em> — light. Transparency, clean architecture, and illuminating solutions.</p>
-        </div>
-        <div class="etym reveal reveal-delay-3">
-          <div class="etym-head"><span class="etym-prefix">-ia</span><span class="etym-root">the realm</span></div>
-          <p>A collective suffix denoting a place or ecosystem — like <em>Alexandria</em> or <em>Utopia</em>.</p>
-        </div>
+    <section class="section">
+      <p class="label">Output</p>
+      <h2>What comes out of the burrow</h2>
+      <div class="grid four">
+        <article class="card"><h3>Experiments</h3><p>Small, fast tests of an idea.</p></article>
+        <article class="card"><h3>Tools</h3><p>Things that turned out to be useful.</p></article>
+        <article class="card"><h3>Knowledge</h3><p>What we learned, including what failed.</p></article>
+        <article class="card"><h3>New questions</h3><p>The tunnels we'll dig next.</p></article>
       </div>
+      <p class="lead center">Not every experiment needs to become a product. <strong>Learning something reliable is already progress.</strong></p>
+    </section>
 
-      <blockquote class="motto reveal">
-        <p>"A realm of swift clarity."</p>
-      </blockquote>
-
-      <ul class="mottos">
-        <li class="reveal">Building at the speed of light.</li>
-        <li class="reveal reveal-delay-1">Swift code. Brilliant experiences.</li>
-        <li class="reveal reveal-delay-2">Illuminating performance in modern software.</li>
-        <li class="reveal reveal-delay-3">Where velocity meets clarity.</li>
+    <section class="section">
+      <p class="label">Lab rules</p>
+      <ul class="rules">
+        <li><strong>Curiosity over roadmap.</strong> The subject can change; the method doesn't.</li>
+        <li><strong>Small and real beats big and imagined.</strong></li>
+        <li><strong>Failure is recorded, not hidden.</strong></li>
+        <li><strong>Open by default.</strong> If it's useful, share it.</li>
       </ul>
     </section>
 
-    <section class="section cta-section">
-      <h2 class="section-title reveal">Get involved</h2>
-      <p class="section-lead reveal">
-        All our projects are open-source. Open issues, send PRs, or just ⭐ the ones you like.
-      </p>
-      <div class="hero-cta">
-        <a href="https://github.com/Vellixia" rel="noopener" target="_blank" class="btn btn-primary">Visit Vellixia on GitHub</a>
-        <a href="mailto:andresholivin01@gmail.com" class="btn btn-ghost">Get in touch</a>
+    <section class="section join">
+      <h2>Join the dig</h2>
+      <p class="lead">Ideas, issues, and contributions are welcome, even half-formed ones. Every good tunnel started as a small scratch in the ground.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/cunilab" rel="noopener">Open the lab</a>
+        <a class="btn" href="https://github.com/cunilab/.github/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="https://github.com/Vellixia.png?v=1" alt="" class="brand-mark small" />
-        <span>Vellixia</span>
-      </div>
-      <div class="footer-meta">
-        <span>Jakarta, Indonesia · Remote-first</span>
-        <span>·</span>
-        <a href="https://github.com/Vellixia" rel="noopener" target="_blank">GitHub</a>
-        <span>·</span>
-        <a href="mailto:andresholivin01@gmail.com">Contact</a>
-        <span>·</span>
-        <a href="./feed.xml">RSS</a>
-      </div>
-      <div class="footer-tag">A realm of swift clarity.</div>
-    </div>
+    <p><em>Cunilab: down the rabbit hole, on purpose.</em></p>
+    <p>Jakarta, Indonesia · <a href="https://github.com/cunilab" rel="noopener">GitHub</a> · <a href="mailto:andresholivin01@gmail.com">Contact</a></p>
   </footer>
-
-  <!-- Cmd-K Search Overlay -->
-  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
-    <div class="search-box">
-      <div class="search-input-wrap">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input type="text" class="search-input" id="searchInput" placeholder="Search projects, sections…" autocomplete="off" />
-        <kbd class="search-kbd">ESC</kbd>
-      </div>
-      <div class="search-results" id="searchResults"></div>
-      <div class="search-hint">
-        <span><kbd class="search-kbd">↑</kbd> <kbd class="search-kbd">↓</kbd> navigate</span>
-        <span><kbd class="search-kbd">↵</kbd> open</span>
-        <span><kbd class="search-kbd">esc</kbd> close</span>
-      </div>
-    </div>
-  </div>
-
-  <script src="./app.js"></script>
 </body>
 </html>
