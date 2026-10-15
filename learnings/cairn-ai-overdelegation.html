@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1A2030" />
+  <title>Cairn — When AI Builds More Than I Understand · Cunilab Learning Log</title>
+  <meta name="description" content="Learning 001 from the Cunilab Learning Log: how over-delegating decisions to AI during Cairn led to lost visibility, scope drift, and the decision to discontinue the project." />
+  <link rel="canonical" href="https://cunilab.github.io/learnings/cairn-ai-overdelegation.html" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Cunilab" />
+  <meta property="og:title" content="Cairn — When AI Builds More Than I Understand" />
+  <meta property="og:description" content="Over-delegating decisions to AI caused loss of project visibility, expanding scope, and growing complexity without demonstrated product value." />
+  <meta property="og:url" content="https://cunilab.github.io/learnings/cairn-ai-overdelegation.html" />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a href="../" class="brand"><img src="../favicon.svg" alt="" width="28" height="28" /><span>Cunilab</span></a>
+    <nav>
+      <a href="../#name">The name</a>
+      <a href="../#philosophy">Philosophy</a>
+      <a href="../#method">Method</a>
+      <a href="./">Learnings</a>
+      <a href="https://github.com/cunilab" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="section">
+      <p class="label"><a href="./">← Learning Log</a></p>
+      <h1>Cairn — When AI Builds More Than I Understand</h1>
+      <p class="lead">Learning 001 · October 15, 2026 · Project: Cairn · Outcome: Discontinued</p>
+
+      <h2>What I wanted</h2>
+      <p>Build persistent, project-aware memory for AI coding agents. Help agents continue work between sessions without losing useful decisions and context.</p>
+
+      <h2>What happened</h2>
+      <p>I increasingly delegated product planning, architecture, implementation, and documentation to AI. AI generated extensive documentation and implementation changes. I stopped reviewing everything carefully and began trusting AI summaries without understanding all decisions.</p>
+      <p>Project direction gradually became unclear. Scope expanded, architecture grew complicated, and I lost track of whether we were still solving the original problem.</p>
+
+      <h2>What I found</h2>
+      <p>Passing tests and CI did not establish useful, reliable memory retrieval. <a href="https://github.com/cunilab/Cairn/pull/66" rel="noopener">Cairn PR #66</a> encountered semantic-quality failures: every tested completeness candidate failed semantic qualification, and source integrity is not semantic completeness. Later changes did not complete final product qualification.</p>
+      <p>Technical implementation progress and product success are different things.</p>
+
+      <h2>Why I stopped</h2>
+      <p>Continuing required more development time and AI tokens, without clear evidence that the product was worth further investment.</p>
+      <p>Existing open-source memory solutions may already cover practical needs. Evaluate them before building another system.</p>
+      <p>I chose to stop rather than continue because of sunk cost.</p>
+
+      <h2>What I learned</h2>
+      <ol class="steps">
+        <li><span>01</span><p>Define the problem, goals, boundaries, and success criteria myself.</p></li>
+        <li><span>02</span><p>AI should advise and execute bounded tasks, not silently own product decisions.</p></li>
+        <li><span>03</span><p>Read and understand documentation instead of measuring progress by document count.</p></li>
+        <li><span>04</span><p>Build a small MVP and validate actual usefulness.</p></li>
+        <li><span>05</span><p>Require explanation and approval before expanding scope or architecture.</p></li>
+        <li><span>06</span><p>Compare existing solutions before writing custom software.</p></li>
+        <li><span>07</span><p>Stop experiments when expected learning or value no longer justifies cost.</p></li>
+      </ol>
+
+      <h2>What changes next</h2>
+      <ul class="rules">
+        <li><strong>Human-owned product direction.</strong></li>
+        <li><strong>Consultation with AI before implementation.</strong></li>
+        <li><strong>Smaller, testable milestones.</strong></li>
+        <li><strong>Less unnecessary documentation.</strong></li>
+        <li><strong>Clear evidence before feature expansion.</strong></li>
+        <li><strong>Explicit review of scope changes.</strong></li>
+        <li><strong>Reuse existing software when appropriate.</strong></li>
+      </ul>
+
+      <h2>Evidence and references</h2>
+      <ul>
+        <li><a href="https://github.com/cunilab/Cairn" rel="noopener">Cairn repository</a></li>
+        <li><a href="https://github.com/cunilab/Cairn/pull/66" rel="noopener">Cairn PR #66</a> — an unfinished draft that was never merged and did not pass semantic qualification.</li>
+        <li><a href="https://github.com/cunilab/Cairn/pull/68" rel="noopener">Cairn discontinuation PR #68</a></li>
+        <li><a href="https://github.com/cunilab/Document-Template-for-Product-Development" rel="noopener">Cunilab product-development document templates</a></li>
+      </ul>
+      <p class="lead">The open-source alternatives mentioned above were not validated; they are a direction for future evaluation, not a conclusion.</p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p><em>Cunilab: down the rabbit hole, on purpose.</em></p>
+    <p><a href="./">Learning Log</a> · <a href="../">Home</a> · <a href="https://github.com/cunilab" rel="noopener">GitHub</a></p>
+  </footer>
+</body>
+</html>

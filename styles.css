@@ -65,6 +65,7 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
   border-radius: 14px; padding: 22px;
 }
 .card p { color: var(--muted); margin: 0; }
+.card h2 { font-size: 1.3rem; }
 
 .steps {
   list-style: none; padding: 0; margin: 28px 0 0;
@@ -86,6 +87,6 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
 .error img { width: 160px; height: auto; }
 
 @media (max-width: 600px) {
-  .nav nav a:not(:last-child) { display: none; }
+  .nav nav a[href*="#"] { display: none; }
   .hero { padding-top: 24px; }
 }
