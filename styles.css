@@ -86,6 +86,89 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
 .error { min-height: 80vh; display: grid; place-items: center; text-align: center; padding: 16px; }
 .error img { width: 160px; height: auto; }
 
+a:focus-visible { outline: 2px solid var(--silver); outline-offset: 3px; border-radius: 3px; }
+
+/* Learning Log index */
+.page-header { padding: 48px 0 40px; border-top: none; }
+.page-header h1 { font-size: clamp(2.2rem, 5vw, 3rem); margin-bottom: .35em; }
+.page-sub { font: 1.2rem/1.5 var(--serif); color: var(--silver); max-width: 640px; margin: 0 0 12px; }
+
+.learning-card {
+  position: relative;
+  background: var(--slate-2); border: 1px solid #2c3550;
+  border-radius: 14px; padding: 26px;
+  max-width: 760px;
+  transition: border-color .15s ease;
+}
+.learning-card:hover { border-color: var(--grey); }
+.learning-card:focus-within { outline: 2px solid var(--silver); outline-offset: 3px; }
+.learning-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: 14px; }
+.learning-meta .label { margin: 0; }
+.outcome {
+  font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--silver); border: 1px solid var(--grey);
+  border-radius: 999px; padding: 3px 10px; white-space: nowrap;
+}
+.learning-card h2 { font-size: clamp(1.35rem, 3vw, 1.7rem); margin-bottom: .4em; }
+.learning-card p { color: var(--muted); margin: 0; }
+.learning-action {
+  display: inline-block; margin-top: 18px;
+  font-weight: 600; color: var(--silver); text-decoration: none;
+}
+.learning-action::after { content: ""; position: absolute; inset: 0; }
+
+/* Featured Learning (homepage) */
+.featured {
+  background: var(--slate-2); border: 1px solid #2c3550;
+  border-left: 3px solid var(--grey);
+  border-radius: 14px; padding: 26px;
+  max-width: 760px; margin: 28px 0 0;
+}
+.featured h3 { font-size: clamp(1.3rem, 3vw, 1.6rem); margin-bottom: .4em; }
+.featured h3 a { text-decoration: none; }
+.featured h3 a:hover { text-decoration: underline; }
+.featured p { color: var(--muted); margin: 0 0 10px; }
+.featured .featured-meta { font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--grey); }
+.featured .featured-action { font-weight: 600; color: var(--silver); text-decoration: none; }
+.featured .featured-action:hover { text-decoration: underline; }
+
+/* Learning Log article */
+.article { max-width: 720px; margin: 0 auto; }
+.article .back { margin: 0 0 28px; }
+.article .back a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+.article .back a:hover { color: var(--silver); }
+.article-meta { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--grey); margin: 0 0 14px; }
+.article h1 { font-size: clamp(2rem, 4.5vw, 2.75rem); margin-bottom: .4em; }
+.article-summary { font: 1.15rem/1.55 var(--serif); color: var(--muted); margin: 0 0 10px; }
+.article-facts { font-size: .95rem; color: var(--muted); margin: 0; padding-bottom: 8px; }
+.article h2 { font-size: clamp(1.45rem, 3.5vw, 1.9rem); margin: 2em 0 .7em; }
+.article p { line-height: 1.7; margin: 0 0 1.15em; }
+.article a { text-decoration: underline; text-underline-offset: 3px; }
+
+.takeaway {
+  background: var(--slate-2); border: 1px solid #2c3550;
+  border-left: 3px solid var(--silver);
+  border-radius: 14px; padding: 20px 24px; margin: 32px 0;
+  font: italic 1.25rem/1.5 var(--serif); color: var(--silver);
+}
+
+.lessons { list-style: none; counter-reset: lesson; padding: 0; margin: 24px 0; display: grid; gap: 18px; }
+.lessons li {
+  counter-increment: lesson;
+  display: grid; grid-template-columns: 2.6rem 1fr; gap: 6px; align-items: baseline;
+}
+.lessons li::before {
+  content: counter(lesson, decimal-leading-zero);
+  font: bold .85rem var(--serif); color: var(--grey); letter-spacing: .1em;
+}
+.lessons li p { margin: 0; line-height: 1.6; }
+
+.evidence { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 14px; }
+.evidence li { padding-left: 18px; position: relative; line-height: 1.55; }
+.evidence li::before { content: "·"; position: absolute; left: 4px; color: var(--grey); font-weight: bold; }
+.evidence .note { display: block; color: var(--muted); font-size: .92rem; }
+.article .note-outro { color: var(--muted); font-size: .95rem; margin: 24px 0 0; }
+
 @media (max-width: 600px) {
   .nav nav a[href*="#"] { display: none; }
   .hero { padding-top: 24px; }
